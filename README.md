@@ -1,5 +1,5 @@
 
-# Simple Note Taking App
+# Note Taking App
 
 A straightforward note-taking application built with React, allowing users to create, edit, delete, and search notes.
 
@@ -28,7 +28,7 @@ Clone the repository:
 ```git clone https://github.com/imdevk/note-taking-app.git```
 
 Navigate to the project directory:
-```cd simple-note-taking-app```
+```cd note-taking-app```
 
 Install dependencies:
 ```npm install```
