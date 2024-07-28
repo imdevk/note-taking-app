@@ -3,7 +3,7 @@
 
 A straightforward note-taking application built with React, allowing users to create, edit, delete, and search notes.
 
-## Live Demo Link: https://note-taking-3bva0pczl-devesh-khatris-projects.vercel.app/
+## Live Demo Link: [Click here](https://note-taking-6zrbdjhou-devesh-khatris-projects.vercel.app/)
 
 ## Features
 
