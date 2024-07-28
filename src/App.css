@@ -1,89 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+  --primary-color: #4CAF50;
+  --secondary-color: #008CBA;
+  --background-color: #f4f4f4;
+  --text-color: #333;
+  --white: #fff;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 .App {
-  max-width: 800px;
+  max-width: 600px;
   margin: 0 auto;
   padding: 20px;
 }
 
 h1 {
   text-align: center;
-  color: #333;
+  color: var(--primary-color);
+  font-weight: 700;
+  margin-bottom: 30px;
 }
 
-.note-form {
-  background-color: #fff;
+.note-form,
+.note-item,
+.search-input {
+  background-color: var(--white);
   padding: 20px;
   margin-bottom: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
 }
 
 .note-form input,
-.note-form textarea {
+.note-form textarea,
+.search-input {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
+  padding: 12px;
+  margin-bottom: 15px;
   border: 1px solid #ddd;
   border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
 }
 
-.note-form button {
-  background-color: #4CAF50;
-  color: white;
+.note-form input:focus,
+.note-form textarea:focus,
+.search-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.note-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.note-form button,
+.note-actions button {
+  background-color: var(--primary-color);
+  color: var(--white);
   padding: 10px 15px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
 }
 
-.note-form button:hover {
-  background-color: #45a049;
+.note-form button:hover,
+.note-actions button:hover {
+  opacity: 0.9;
 }
 
 .note-item {
-  background-color: #fff;
-  padding: 15px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.note-item:hover {
+  transform: translateY(-3px);
 }
 
 .note-item h3 {
   margin-top: 0;
-  color: #333;
+  color: var(--primary-color);
 }
 
 .note-actions {
-  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 15px;
 }
 
 .note-actions button {
-  margin-left: 10px;
-  padding: 5px 10px;
-  background-color: #008CBA;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.note-actions button:hover {
-  background-color: #007B9A;
+  background-color: var(--secondary-color);
 }
 
 .search-input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  margin-bottom: 25px;
 }
 
 .pagination {
@@ -91,6 +115,7 @@ h1 {
   justify-content: center;
   list-style-type: none;
   padding: 0;
+  margin-top: 30px;
 }
 
 .pagination li {
@@ -98,19 +123,53 @@ h1 {
 }
 
 .pagination button {
-  padding: 5px 10px;
+  padding: 8px 12px;
   border: 1px solid #ddd;
-  background-color: #fff;
+  background-color: var(--white);
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.pagination li.active button {
-  background-color: #4CAF50;
-  color: white;
+.pagination li.active button,
+.pagination button:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .App {
-    padding: 10px;
+    padding: 15px;
+  }
+
+  .note-form,
+  .note-item,
+  .search-input {
+    padding: 15px;
+  }
+
+  .note-form input,
+  .note-form textarea,
+  .search-input,
+  .note-form button,
+  .note-actions button {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  .note-actions {
+    flex-direction: column;
+  }
+
+  .note-actions button {
+    width: 100%;
+  }
+
+  .pagination button {
+    padding: 6px 10px;
   }
 }

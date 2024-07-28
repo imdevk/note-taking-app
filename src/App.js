@@ -39,7 +39,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Simple Note Taking App</h1>
+      <h1>Note Taking App</h1>
       <NoteForm addNote={addNote} />
       <NoteList
         notes={notes}
